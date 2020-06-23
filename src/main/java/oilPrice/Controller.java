@@ -70,11 +70,11 @@ public class Controller {
 
         PreparedStatement statement = connection.prepareStatement("select min(price), max(price) from oilprice where end_date between '"+start+"' and '"+end+"'");
         ResultSet rs = statement.executeQuery();
+
         if (rs.next()) {
             minPrice = rs.getDouble(1);
             maxPrice = rs.getDouble(2);
         }
-
         minAndMax.put("min",minPrice);
         minAndMax.put("max",maxPrice);
         return minAndMax;
