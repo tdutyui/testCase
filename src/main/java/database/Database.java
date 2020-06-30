@@ -35,7 +35,7 @@ public class Database {
             }
 
             connection.createStatement();
-            String sql = "insert into oilprice (start_date, end_date, [price) values (?, ?, ?)";
+            String sql = "insert into oilprice (start_date, end_date, price) values (?, ?, ?)";
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setObject(1, startDate);
             statement.setObject(2, endDate);
